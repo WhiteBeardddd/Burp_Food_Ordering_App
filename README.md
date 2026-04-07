@@ -14,7 +14,7 @@ A mobile application built on Android using Java and XML, backed entirely by Sup
 
 ## 02 — Architecture
 
-<img src="SystemArchitecture.jpg" alt="System Architecture Diagram" width="800" />
+<img src="SystemArchitecture.jpg" alt="System Architecture Diagram" width="1200" />
 
 ---
 
