@@ -10,14 +10,17 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.midtermsexam_beauty.R;
-import com.example.midtermsexam_beauty.utilities.DatabaseHelper;
+import com.example.midtermsexam_beauty.utilities.SupabaseAuthService;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText etUsername, etEmail, etPassword, etConfirmPassword;
     private Button btnSignUp;
     private TextView tvBackToLogin;
-    private DatabaseHelper dbHelper;
+    private SupabaseAuthService authService;
+    private ExecutorService executor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +29,9 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         hideSystemUI();
-        
-        dbHelper = new DatabaseHelper(this);
+
+        authService = new SupabaseAuthService();
+        executor = Executors.newSingleThreadExecutor();
 
         etUsername = findViewById(R.id.regUsernameEditText);
         etEmail = findViewById(R.id.regEmailEditText);
@@ -46,21 +50,24 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
             } else if (!pass.equals(confirmPass)) {
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
+            } else if (!authService.isConfigured()) {
+                Toast.makeText(this, "Supabase is not configured. Add SUPABASE_URL and SUPABASE_ANON_KEY.", Toast.LENGTH_LONG).show();
             } else {
-                if (dbHelper.checkUserExists(user)) {
-                    Toast.makeText(this, "User already exists!", Toast.LENGTH_SHORT).show();
-                } else {
-                    boolean inserted = dbHelper.addUser(user, email, pass);
-                    if (inserted) {
-                        Toast.makeText(this, "Registration Successful!", Toast.LENGTH_SHORT).show();
-                        // Navigate back to Login
+                btnSignUp.setEnabled(false);
+                executor.execute(() -> {
+                    SupabaseAuthService.AuthResult result = authService.signUp(email, pass, user);
+                    runOnUiThread(() -> {
+                        btnSignUp.setEnabled(true);
+                        if (result.success) {
+                            Toast.makeText(this, result.message, Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                         startActivity(intent);
                         finish();
-                    } else {
-                        Toast.makeText(this, "Registration Failed!", Toast.LENGTH_SHORT).show();
-                    }
-                }
+                        } else {
+                            Toast.makeText(this, result.message, Toast.LENGTH_LONG).show();
+                        }
+                    });
+                });
             }
         });
 
@@ -79,5 +86,13 @@ public class RegisterActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (executor != null) {
+            executor.shutdown();
+        }
+        super.onDestroy();
     }
 }
