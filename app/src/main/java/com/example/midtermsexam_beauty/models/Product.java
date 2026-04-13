@@ -119,25 +119,3 @@ public class Product {
     }
 }
 
-
-//    public static List<Product> getDefaultProducts() {
-//        List<Product> products = new ArrayList<>();
-//        products.add(new Product(R.drawable.product_1, "Cerave", 300.00f, "Moisturizing Lotion", 0, 2.2f,"Ranked","Dry"));
-//        products.add(new Product(R.drawable.product_2, "Cerave", 200.00f, "Hydrating Toner", 0, 3.8f,"Hot","Combination"));
-//        products.add(new Product(R.drawable.product_3, "Cetaphil", 250.00f, "Facial Cleanser", 0, 2.9f,"Loved","Oily"));
-//        products.add(new Product(R.drawable.product_4, "Vitamin C", 300.00f, "Brightening Serum", 0, 3.3f,"Secret","Dry"));
-//        products.add(new Product(R.drawable.product_5, "Ordinary", 300.00f, "Toning Solutions", 0, 2.7f,"Ranked","Normal"));
-//        products.add(new Product(R.drawable.product_6, "Zaron", 400.00f, "Brightening Toner", 0, 3.5f,"Hot","Oily"));
-//        return products;
-//    }
-//
-//    public static List<Product> getPopularProducts() {
-//        List<Product> products = new ArrayList<>();
-//        products.add(new Product(R.drawable.popular_product_1, "Sleeping Mask", 300.00f, "Black Mask", 0, 4.9f,"Secret","Combination"));
-//        products.add(new Product(R.drawable.popular_product_2, "Garnier", 200.00f, "Charcoal Mask", 0, 4.7f,"Hot","Dry"));
-//        products.add(new Product(R.drawable.popular_product_3, "Cerave", 250.00f, "Hydrating Sunscreen", 0, 4.7f,"Ranked","Normal"));
-//        products.add(new Product(R.drawable.popular_product_4, "Mario Badescu", 300.00f, "Facial Spray", 0, 4.5f,"Hot","Dry"));
-//        products.add(new Product(R.drawable.popular_product_5, "Nivea Men", 300.00f, "Lip Balm", 0, 4.6f,"Secret","Combination"));
-//        products.add(new Product(R.drawable.popular_product_6, "Rouge Dior", 400.00f, "Lipstick", 0, 4.3f,"Hot","Oily"));
-//        return products;
-//    }

@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.midtermsexam_beauty.R;
 import com.example.midtermsexam_beauty.models.Product;
-import com.example.midtermsexam_beauty.display.ViewProductDetails;
+import com.example.midtermsexam_beauty.views.user.ViewProductDetails;
 
 import java.util.ArrayList;
 import java.util.List;

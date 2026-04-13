@@ -1,4 +1,4 @@
-package com.example.midtermsexam_beauty.display;
+package com.example.midtermsexam_beauty.views.user;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,10 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.midtermsexam_beauty.R;
+import com.example.midtermsexam_beauty.utilities.SessionManager;
 import com.example.midtermsexam_beauty.utilities.SupabaseAuthService;
+import com.example.midtermsexam_beauty.views.seller.SellerDashboard;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -43,22 +46,38 @@ public class LoginActivity extends AppCompatActivity {
             if (email.isEmpty() || pass.isEmpty()) {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
             } else if (!authService.isConfigured()) {
-                Toast.makeText(this, "Supabase is not configured. Add SUPABASE_URL and SUPABASE_ANON_KEY.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Supabase is not configured.", Toast.LENGTH_LONG).show();
             } else {
                 btnLoginSubmit.setEnabled(false);
                 executor.execute(() -> {
                     SupabaseAuthService.AuthResult result = authService.signIn(email, pass);
-                    runOnUiThread(() -> {
-                        btnLoginSubmit.setEnabled(true);
-                        if (result.success) {
+                    if (result.success) {
+                        // Save session
+                        SessionManager session = new SessionManager(LoginActivity.this);
+                        session.saveSession(result.accessToken, result.userId);
+
+                        // Check if seller
+                        boolean seller = authService.isSeller(result.accessToken, result.userId);
+                        session.setIsSeller(seller);
+
+                        runOnUiThread(() -> {
+                            btnLoginSubmit.setEnabled(true);
                             Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(LoginActivity.this, Homepage.class);
+                            Intent intent;
+                            if (seller) {
+                                intent = new Intent(LoginActivity.this, SellerDashboard.class);
+                            } else {
+                                intent = new Intent(LoginActivity.this, Homepage.class);
+                            }
                             startActivity(intent);
                             finish();
-                        } else {
+                        });
+                    } else {
+                        runOnUiThread(() -> {
+                            btnLoginSubmit.setEnabled(true);
                             Toast.makeText(LoginActivity.this, result.message, Toast.LENGTH_LONG).show();
-                        }
-                    });
+                        });
+                    }
                 });
             }
         });

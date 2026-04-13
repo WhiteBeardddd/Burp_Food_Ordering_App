@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,45 +13,45 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.MidtermsExam_Beauty"
-        tools:targetApi="31">
-
+        tools:targetApi="31" >
         <activity
-            android:name=".display.RegisterActivity"
-            android:exported="false">
-        </activity>
-        <activity
-            android:name=".display.LoginActivity"
+            android:name=".views.user.UserProfile"
             android:exported="false" />
         <activity
-            android:name=".display.SkinType"
+            android:name=".views.seller.SellerDashboard"
             android:exported="false" />
         <activity
-            android:name=".display.ViewProductDetails"
+            android:name=".views.user.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".display.FeaturedProducts"
+            android:name=".views.user.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".display.PopularProducts"
+            android:name=".views.user.SkinType"
             android:exported="false" />
         <activity
-            android:name=".display.Checkout"
+            android:name=".views.user.ViewProductDetails"
             android:exported="false" />
         <activity
-            android:name=".display.Homepage"
-            android:exported="false" >
-        </activity>
+            android:name=".views.user.FeaturedProducts"
+            android:exported="false" />
+        <activity
+            android:name=".views.user.PopularProducts"
+            android:exported="false" />
+        <activity
+            android:name=".views.user.Checkout"
+            android:exported="false" />
+        <activity
+            android:name=".views.user.Homepage"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true" >
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

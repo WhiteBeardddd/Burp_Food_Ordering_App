@@ -8,9 +8,8 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
-import com.example.midtermsexam_beauty.display.Homepage;
-import com.example.midtermsexam_beauty.display.LoginActivity;
-import com.example.midtermsexam_beauty.display.RegisterActivity;
+import com.example.midtermsexam_beauty.views.user.LoginActivity;
+import com.example.midtermsexam_beauty.views.user.RegisterActivity;
 
 public class MainActivity extends AppCompatActivity {
     Button logInBtn;

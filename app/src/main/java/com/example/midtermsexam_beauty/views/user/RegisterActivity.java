@@ -1,4 +1,4 @@
-package com.example.midtermsexam_beauty.display;
+package com.example.midtermsexam_beauty.views.user;
 
 import android.content.Intent;
 import android.os.Bundle;

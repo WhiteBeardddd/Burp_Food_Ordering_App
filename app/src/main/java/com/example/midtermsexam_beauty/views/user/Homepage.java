@@ -1,4 +1,4 @@
-package com.example.midtermsexam_beauty.display;
+package com.example.midtermsexam_beauty.views.user;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
