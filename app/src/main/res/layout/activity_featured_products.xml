@@ -129,7 +129,7 @@
                 android:background="@drawable/border_inv"
                 android:elevation="8dp"
                 android:src="@drawable/home_icon"
-                android:tint="#9E9E9E"
+                app:tint="#9E9E9E"
                 tools:ignore="ContentDescription" />
 
             <ImageButton
@@ -141,7 +141,7 @@
                 android:background="@drawable/border_inv"
                 android:elevation="8dp"
                 android:src="@drawable/popular_icon"
-                android:tint="#9E9E9E"
+                app:tint="#9E9E9E"
                 tools:ignore="ContentDescription" />
 
             <ImageButton
@@ -153,7 +153,7 @@
                 android:background="@drawable/border_inv"
                 android:elevation="8dp"
                 android:src="@drawable/skin_type_icon"
-                android:tint="#9E9E9E"
+                app:tint="#9E9E9E"
                 tools:ignore="ContentDescription" />
 
             <ImageButton
@@ -165,7 +165,7 @@
                 android:background="@drawable/border_inv"
                 android:elevation="8dp"
                 android:src="@drawable/featured_icon"
-                android:tint="#FF5722"
+                app:tint="#FF5722"
                 tools:ignore="ContentDescription" />
 
             <ImageButton
@@ -177,7 +177,7 @@
                 android:background="@drawable/border_inv"
                 android:elevation="8dp"
                 android:src="@drawable/check_out_icon"
-                android:tint="#9E9E9E"
+                app:tint="#9E9E9E"
                 tools:ignore="ContentDescription" />
 
         </LinearLayout>

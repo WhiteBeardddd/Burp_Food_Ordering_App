@@ -95,8 +95,6 @@
                 android:text="Featured Shops"
                 android:textColor="#00C853"
                 android:fontFamily="@font/lexend_black"
-                android:text="Best Sellers"
-                android:textColor="#FFFFFF"
                 android:textSize="19sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
