@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/forest_green">
+    android:background="#1C1C1C">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="#212121"
         app:cardCornerRadius="20dp"
         app:cardElevation="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,8 +34,8 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/beauty_logo"
-                    tools:srcCompat="@drawable/beauty_logo" />
+                    android:src="@drawable/tarabytes"
+                    tools:srcCompat="@drawable/tarabytes" />
 
                 <TextView
                     android:id="@+id/welcomeTextView"
@@ -43,7 +44,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="16dp"
                     android:text="Create Account"
-                    android:textColor="@color/forest_text_primary"
+                    android:textColor="#FFFFFF"
                     android:textSize="26sp"
                     android:textStyle="bold" />
 
@@ -51,17 +52,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Join the forest community"
-                    android:textColor="@color/forest_text_secondary"
+                    android:layout_marginTop="4dp"
+                    android:text="Join the TaraBytes community"
+                    android:textColor="#9E9E9E"
                     android:textSize="14sp" />
+
+                <!-- Accent divider -->
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="3dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="#FF5722" />
 
                 <EditText
                     android:id="@+id/regUsernameEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="0dp"
                     android:background="@drawable/border_black"
                     android:hint="Username"
+                    android:textColorHint="#9E9E9E"
+                    android:textColor="#FFFFFF"
                     android:inputType="textPersonName"
                     android:minHeight="54dp"
                     android:padding="16dp" />
@@ -73,6 +86,8 @@
                     android:layout_marginTop="12dp"
                     android:background="@drawable/border_black"
                     android:hint="Email Address"
+                    android:textColorHint="#9E9E9E"
+                    android:textColor="#FFFFFF"
                     android:inputType="textEmailAddress"
                     android:minHeight="54dp"
                     android:padding="16dp" />
@@ -84,6 +99,8 @@
                     android:layout_marginTop="12dp"
                     android:background="@drawable/border_black"
                     android:hint="Password"
+                    android:textColorHint="#9E9E9E"
+                    android:textColor="#FFFFFF"
                     android:inputType="textPassword"
                     android:minHeight="54dp"
                     android:padding="16dp" />
@@ -95,6 +112,8 @@
                     android:layout_marginTop="12dp"
                     android:background="@drawable/border_black"
                     android:hint="Confirm Password"
+                    android:textColorHint="#9E9E9E"
+                    android:textColor="#FFFFFF"
                     android:inputType="textPassword"
                     android:minHeight="54dp"
                     android:padding="16dp" />
@@ -104,13 +123,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
-                    android:backgroundTint="@color/forest_orange_accent"
+                    android:backgroundTint="#FF5722"
                     android:padding="16dp"
                     android:text="Sign Up"
                     android:textAllCaps="false"
-                    android:textColor="@color/white"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:stateListAnimator="@null" />
 
                 <TextView
                     android:id="@+id/backToLoginTextView"
@@ -119,7 +139,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="16dp"
                     android:text="Already have an account? Log In"
-                    android:textColor="@color/forest_orange_accent"
+                    android:textColor="#00C853"
                     android:textStyle="bold" />
 
             </LinearLayout>

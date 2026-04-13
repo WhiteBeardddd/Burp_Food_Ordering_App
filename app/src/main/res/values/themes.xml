@@ -1,12 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.MidtermsExam_Beauty" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.MidtermsExam_Beauty" parent="Theme.Material3.Dark.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/forest_green</item>
         <item name="colorSecondary">@color/forest_orange_accent</item>
         <item name="colorTertiary">@color/forest_red</item>
         <item name="android:statusBarColor">@color/forest_green_dark</item>
+        <item name="android:windowAnimationStyle">@style/CustomWindowAnimation</item>
     </style>
 
     <style name="Theme.MidtermsExam_Beauty" parent="Base.Theme.MidtermsExam_Beauty" />
+
+    <!-- Fade transition animation -->
+    <style name="CustomWindowAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out</item>
+    </style>
 </resources>

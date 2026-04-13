@@ -12,14 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/gradient_bg_004">
+        android:background="#1C1C1C">
 
         <!-- Header -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="99dp"
+            android:layout_height="110dp"
             android:elevation="8dp"
-            android:background="@drawable/gradient_bg_002"
+            android:background="#212121"
             android:orientation="horizontal"
             android:padding="10dp">
 
@@ -28,7 +28,7 @@
                 android:layout_width="71dp"
                 android:layout_height="74dp"
                 android:layout_gravity="start|center_vertical"
-                android:src="@drawable/beauty_logo"
+                android:src="@drawable/tarabytes"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -37,69 +37,84 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
                 android:gravity="center_vertical"
-                android:text="Beautify"
+                android:text="TaraBytes"
                 android:textColor="#FFFFFF"
                 android:letterSpacing="0.3"
-                android:fontFamily="@font/grand_hotel_regular"
+                android:fontFamily="@font/lexend_black"
                 android:textSize="27sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 
-        <!-- Content Section (Main Area) -->
+        <!-- Content Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:paddingTop="8dp"
+            android:paddingHorizontal="12dp">
 
-            <!-- Back Button -->
-            <ImageButton
-                android:id="@+id/back_btn"
-                android:layout_width="50dp"
-                android:layout_height="45dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="@drawable/back_icon"
-                android:backgroundTint="@color/white"
-                tools:ignore="ContentDescription" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Back + Title Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="10dp"
+                android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:text="SKIN FILTER"
-                android:textColor="#FFFFFF"
-                android:letterSpacing="0.3"
-                android:fontFamily="@font/lexend_semibold"
-                android:textSize="27sp"
-                android:textStyle="bold"
-                tools:ignore="HardcodedText" />
+                android:layout_marginBottom="4dp">
 
-            <!-- Spinner (Dropdown) for Category Selection -->
+                <ImageButton
+                    android:id="@+id/back_btn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/back_icon"
+                    android:backgroundTint="#FF5722"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Skin Types"
+                    android:textColor="#FFFFFF"
+                    android:letterSpacing="0.1"
+                    android:fontFamily="@font/lexend_semibold"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="40dp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <!-- Accent divider -->
+            <View
+                android:layout_width="60dp"
+                android:layout_height="3dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#FF5722"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="4dp"/>
+
+            <!-- Styled Spinner -->
             <Spinner
                 android:id="@+id/skinTypeSpinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@android:drawable/btn_dropdown"
-                android:padding="8dp" />
+                android:layout_height="48dp"
+                android:layout_marginBottom="12dp"
+                android:background="#2A2A2A"
+                android:padding="10dp"
+                android:popupBackground="#212121"
+                android:spinnerMode="dropdown" />
 
-            <!-- GridView for Displaying Items -->
+            <!-- RecyclerView -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/skinTypeListView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:numColumns="2"
-                android:verticalSpacing="10dp"
-                android:horizontalSpacing="10dp"
-                android:stretchMode="columnWidth"
-                android:padding="10dp"
+                android:padding="4dp"
                 tools:ignore="NestedWeights" />
+
         </LinearLayout>
 
         <!-- Bottom Navigation Bar -->
@@ -107,14 +122,12 @@
             android:id="@+id/navigation_bar"
             android:layout_width="match_parent"
             android:layout_height="62dp"
-            android:layout_gravity="bottom"
-            android:background="@drawable/gradient_bg_002"
+            android:background="#212121"
             android:orientation="horizontal"
             android:paddingHorizontal="10dp"
             android:paddingVertical="5dp"
             android:gravity="center"
-            android:weightSum="6"
-            app:layout_constraintBottom_toBottomOf="parent">
+            android:weightSum="6">
 
             <ImageButton
                 android:id="@+id/toHome"
@@ -125,7 +138,8 @@
                 android:background="@drawable/border_inv"
                 android:elevation="8dp"
                 android:src="@drawable/home_icon"
-                tools:ignore="ContentDescription,HardcodedText" />
+                android:tint="#9E9E9E"
+                tools:ignore="ContentDescription" />
 
             <ImageButton
                 android:id="@+id/toRatings"
@@ -136,8 +150,8 @@
                 android:background="@drawable/border_inv"
                 android:elevation="8dp"
                 android:src="@drawable/popular_icon"
-                tools:ignore="ContentDescription,HardcodedText" />
-
+                android:tint="#9E9E9E"
+                tools:ignore="ContentDescription" />
 
             <ImageButton
                 android:id="@+id/toSkinTypes"
@@ -148,7 +162,8 @@
                 android:background="@drawable/border_inv"
                 android:elevation="8dp"
                 android:src="@drawable/skin_type_icon"
-                tools:ignore="ContentDescription,HardcodedText" />
+                android:tint="#FF5722"
+                tools:ignore="ContentDescription" />
 
             <ImageButton
                 android:id="@+id/toFeatured"
@@ -159,6 +174,7 @@
                 android:background="@drawable/border_inv"
                 android:elevation="8dp"
                 android:src="@drawable/featured_icon"
+                android:tint="#9E9E9E"
                 tools:ignore="ContentDescription" />
 
             <ImageButton
@@ -170,6 +186,7 @@
                 android:background="@drawable/border_inv"
                 android:elevation="8dp"
                 android:src="@drawable/check_out_icon"
+                android:tint="#9E9E9E"
                 tools:ignore="ContentDescription" />
 
         </LinearLayout>
