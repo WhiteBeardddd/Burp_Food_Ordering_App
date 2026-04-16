@@ -14,8 +14,6 @@
         android:background="#1C1C1C">
 
         <!-- Header -->
-
-        <!-- Content Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="110dp"
@@ -48,6 +46,7 @@
 
         </LinearLayout>
 
+        <!-- Content Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -110,78 +109,9 @@
         </LinearLayout>
 
         <!-- Bottom Navigation Bar -->
-        <LinearLayout
+        <include
             android:id="@+id/navigation_bar"
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:background="#212121"
-            android:orientation="horizontal"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            android:gravity="center"
-            android:weightSum="6">
-
-            <ImageButton
-                android:id="@+id/toHome"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:background="@drawable/border_inv"
-                android:elevation="8dp"
-                android:src="@drawable/home_icon"
-                android:tint="#9E9E9E"
-                tools:ignore="ContentDescription" />
-
-            <ImageButton
-                android:id="@+id/toRatings"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:background="@drawable/border_inv"
-                android:elevation="8dp"
-                android:src="@drawable/popular_icon"
-                app:tint="#FF5722"
-                tools:ignore="ContentDescription" />
-
-            <ImageButton
-                android:id="@+id/toSkinTypes"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:background="@drawable/border_inv"
-                android:elevation="8dp"
-                android:src="@drawable/skin_type_icon"
-                app:tint="#9E9E9E"
-                tools:ignore="ContentDescription" />
-
-            <ImageButton
-                android:id="@+id/toFeatured"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:background="@drawable/border_inv"
-                android:elevation="8dp"
-                android:src="@drawable/featured_icon"
-                app:tint="#9E9E9E"
-                tools:ignore="ContentDescription" />
-
-            <ImageButton
-                android:id="@+id/toPayment"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:background="@drawable/border_inv"
-                android:elevation="8dp"
-                android:src="@drawable/check_out_icon"
-                app:tint="#9E9E9E"
-                tools:ignore="ContentDescription" />
-
-        </LinearLayout>
+            layout="@layout/layout_navbar" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

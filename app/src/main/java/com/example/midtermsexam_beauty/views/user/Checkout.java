@@ -32,10 +32,10 @@ public class Checkout extends AppCompatActivity {
 
 
         toPrevious = findViewById(R.id.back_btn);
-        proceedToFeatured = findViewById(R.id.toFeatured);
-        proceedToRatings = findViewById(R.id.toRatings);
-        proceedToHome = findViewById(R.id.toHome);
-        proceedToSkinTypes = findViewById(R.id.toSkinTypes);
+        proceedToFeatured = findViewById(R.id.nav_featured);
+        proceedToRatings = findViewById(R.id.nav_ratings);
+        proceedToHome = findViewById(R.id.nav_home);
+        proceedToSkinTypes = findViewById(R.id.nav_skin_types);
 
         ListView cartListView = findViewById(R.id.cart_list);
         totalPriceText = findViewById(R.id.total_price); // Get Total Price TextView

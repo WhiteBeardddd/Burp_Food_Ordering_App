@@ -29,10 +29,10 @@ public class FeaturedProducts extends AppCompatActivity {
         hideSystemUI();
 
         toPrevious = findViewById(R.id.back_btn);
-        proceedToRatings = findViewById(R.id.toRatings);
-        proceedToHome = findViewById(R.id.toHome);
-        proceedToSkinTypes = findViewById(R.id.toSkinTypes);
-        proceedToCheckout = findViewById(R.id.toPayment);
+        proceedToRatings = findViewById(R.id.nav_ratings);
+        proceedToHome = findViewById(R.id.nav_home);
+        proceedToSkinTypes = findViewById(R.id.nav_skin_types);
+        proceedToCheckout = findViewById(R.id.nav_payment);
 
         ListView featuredListView = findViewById(R.id.featured_recycler);
 

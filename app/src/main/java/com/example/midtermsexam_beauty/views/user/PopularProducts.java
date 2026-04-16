@@ -39,10 +39,10 @@ public class PopularProducts extends AppCompatActivity {
 
 
         toPrevious = findViewById(R.id.back_btn);
-        proceedToFeatured = findViewById(R.id.toFeatured);
-        proceedToHome = findViewById(R.id.toHome);
-        proceedToSkinTypes = findViewById(R.id.toSkinTypes);
-        proceedToCheckout = findViewById(R.id.toPayment);
+        proceedToFeatured = findViewById(R.id.nav_featured);
+        proceedToHome = findViewById(R.id.nav_home);
+        proceedToSkinTypes = findViewById(R.id.nav_skin_types);
+        proceedToCheckout = findViewById(R.id.nav_payment);
 
 
         // Navigation Buttons

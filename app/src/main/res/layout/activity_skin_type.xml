@@ -130,7 +130,7 @@
             android:weightSum="6">
 
             <ImageButton
-                android:id="@+id/toHome"
+                android:id="@+id/nav_home"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -142,7 +142,7 @@
                 tools:ignore="ContentDescription" />
 
             <ImageButton
-                android:id="@+id/toRatings"
+                android:id="@+id/nav_ratings"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -154,7 +154,7 @@
                 tools:ignore="ContentDescription" />
 
             <ImageButton
-                android:id="@+id/toSkinTypes"
+                android:id="@+id/nav_skin_types"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -166,7 +166,7 @@
                 tools:ignore="ContentDescription" />
 
             <ImageButton
-                android:id="@+id/toFeatured"
+                android:id="@+id/nav_featured"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -178,7 +178,7 @@
                 tools:ignore="ContentDescription" />
 
             <ImageButton
-                android:id="@+id/toPayment"
+                android:id="@+id/nav_payment"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

@@ -35,10 +35,10 @@ public class SkinType extends AppCompatActivity {
 
         // Initialize Buttons
         ImageButton toPrevious = findViewById(R.id.back_btn);
-        ImageButton proceedToFeatured = findViewById(R.id.toFeatured);
-        ImageButton proceedToRatings = findViewById(R.id.toRatings);
-        ImageButton proceedToHome = findViewById(R.id.toHome);
-        ImageButton proceedToCheckout = findViewById(R.id.toPayment);
+        ImageButton proceedToFeatured = findViewById(R.id.nav_featured);
+        ImageButton proceedToRatings = findViewById(R.id.nav_ratings);
+        ImageButton proceedToHome = findViewById(R.id.nav_home);
+        ImageButton proceedToCheckout = findViewById(R.id.nav_payment);
 
         // Initialize RecyclerView & Spinner
         RecyclerView skinTypeListView = findViewById(R.id.skinTypeListView);

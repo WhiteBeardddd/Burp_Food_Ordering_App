@@ -163,79 +163,11 @@
     </androidx.core.widget.NestedScrollView>
 
     <!-- Bottom Navigation Bar -->
-
-    <LinearLayout
+    <include
         android:id="@+id/navigation_bar"
+        layout="@layout/layout_navbar"
         android:layout_width="match_parent"
-        android:layout_height="62dp"
-        android:background="#212121"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingHorizontal="10dp"
-        android:paddingVertical="5dp"
-        android:weightSum="6"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <ImageButton
-            android:id="@+id/toHome"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:background="@drawable/border_inv"
-            android:elevation="8dp"
-            android:src="@drawable/home_icon"
-            app:tint="#FF5722"
-            tools:ignore="ContentDescription" />
-
-        <ImageButton
-            android:id="@+id/toRatings"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:background="@drawable/border_inv"
-            android:elevation="8dp"
-            android:src="@drawable/popular_icon"
-            app:tint="#9E9E9E"
-            tools:ignore="ContentDescription" />
-
-        <ImageButton
-            android:id="@+id/toSkinTypes"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:background="@drawable/border_inv"
-            android:elevation="8dp"
-            android:src="@drawable/skin_type_icon"
-            app:tint="#9E9E9E"
-            tools:ignore="ContentDescription" />
-
-        <ImageButton
-            android:id="@+id/toFeatured"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:background="@drawable/border_inv"
-            android:elevation="8dp"
-            android:src="@drawable/featured_icon"
-            android:tint="#9E9E9E"
-            tools:ignore="ContentDescription" />
-
-        <ImageButton
-            android:id="@+id/toPayment"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:background="@drawable/border_inv"
-            android:elevation="8dp"
-            android:src="@drawable/check_out_icon"
-            android:tint="#9E9E9E"
-            tools:ignore="ContentDescription" />
-
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
